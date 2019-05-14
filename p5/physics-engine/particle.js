@@ -9,18 +9,18 @@ function Particle(x, y, m) {
     this.pos.add(this.vel);
 
     this.acc.set(0, 0);
-  }
+  };
 
   this.display = function () {
     fill(255);
     ellipse(this.pos.x, this.pos.y, this.mass*10, this.mass*10);
-  }
+  };
 
   this.applyForce = function(force) {
     var f = force.copy();
-    f.div(this.mass)
+    f.div(this.mass);
     this.acc.add(f);
-  }
+  };
 
   this.edges = function() {
     if (this.pos.y > height || this.pos.y < 0) {
@@ -32,5 +32,5 @@ function Particle(x, y, m) {
       this.vel.x *= -1;
       //this.pos.x = width;
     } 
-  }
+  };
 }
